@@ -4215,15 +4215,6 @@ TextureImporter:
       PS_Tileset_11_0: -3579027449119354459
       PS_Tileset_11_1: 6948797969271551559
       PS_Tileset_11_10: 8800498176785608173
-<<<<<<< HEAD
-      PS_Tileset_11_11: -6636855231876888471
-      PS_Tileset_11_12: 6692912647590921990
-      PS_Tileset_11_13: 1948093025712352333
-      PS_Tileset_11_14: 776810440486571264
-      PS_Tileset_11_15: 121982022954352694
-      PS_Tileset_11_16: 75820982675482486
-      PS_Tileset_11_17: -3484560521331647511
-=======
       PS_Tileset_11_100: -2001248356
       PS_Tileset_11_101: 1797075222
       PS_Tileset_11_102: -2028625937
@@ -4311,7 +4302,6 @@ TextureImporter:
       PS_Tileset_11_177: -760417028
       PS_Tileset_11_178: -1740585945
       PS_Tileset_11_179: 2004709185
->>>>>>> af6db473e7e5c1e5b387466a0508c8287464c326
       PS_Tileset_11_18: 6915474782277482971
       PS_Tileset_11_19: 2759827734218206571
       PS_Tileset_11_2: 7771639375947751213
@@ -4326,14 +4316,6 @@ TextureImporter:
       PS_Tileset_11_28: -2922041171515393507
       PS_Tileset_11_29: -2127974093290531152
       PS_Tileset_11_3: 7487114649542537844
-<<<<<<< HEAD
-      PS_Tileset_11_4: 5131816219545367209
-      PS_Tileset_11_5: 1133099772640214017
-      PS_Tileset_11_6: -8018790741986086997
-      PS_Tileset_11_7: -3421478237452871032
-      PS_Tileset_11_8: 1615736116664406267
-      PS_Tileset_11_9: -6325938945297133969
-=======
       PS_Tileset_11_30: 860462004
       PS_Tileset_11_31: -1355829631
       PS_Tileset_11_32: -1300464450
@@ -4410,7 +4392,6 @@ TextureImporter:
       PS_Tileset_11_97: 68776553
       PS_Tileset_11_98: -541041222
       PS_Tileset_11_99: -1522560935
->>>>>>> af6db473e7e5c1e5b387466a0508c8287464c326
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

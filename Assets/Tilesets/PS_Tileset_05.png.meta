@@ -2394,14 +2394,6 @@ TextureImporter:
       PS_Tileset_05_34: 2762863261952293476
       PS_Tileset_05_35: -1895518140984580478
       PS_Tileset_05_36: -5673698440327427982
-<<<<<<< HEAD
-      PS_Tileset_05_4: 6122328179557022953
-      PS_Tileset_05_5: -7078284758737303258
-      PS_Tileset_05_6: -4973723045718450740
-      PS_Tileset_05_7: -6853234227181274186
-      PS_Tileset_05_8: -1323503901347745354
-      PS_Tileset_05_9: 5907462451003404498
-=======
       PS_Tileset_05_37: 1957369133
       PS_Tileset_05_38: 1027102518
       PS_Tileset_05_39: 1256053823
@@ -2466,7 +2458,6 @@ TextureImporter:
       PS_Tileset_05_92: 780549245
       PS_Tileset_05_93: -715671249
       PS_Tileset_05_94: -1808795793
->>>>>>> af6db473e7e5c1e5b387466a0508c8287464c326
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
