@@ -1,55 +1,62 @@
 using UnityEngine;
-
 public class BubbleResizing : MonoBehaviour
 {
-    public Vector3 targetSize = new Vector3(2, 2, 2); // Target size when resizing
-    public Vector3 maxSize = new Vector3(3, 3, 3);    // Maximum allowed size
-    public float resizeSpeed = 2f;                   // Speed of resizing
-    public float resizeThreshold = 0.01f;           // Threshold to stop resizing
+    [Header ("Bubble")]
+    SpriteRenderer bubble;
+    Vector2 originalSize;
+    Vector2 maxSizeVector;
+    public float maxSize;
+    public float growSpeed;
 
-    private Vector3 originalSize;                   // Original size of the GameObject
-    private bool isResizing = false;                // Is resizing in progress
-    private bool isExpanding = true;                // Expanding or shrinking
-
+    [Header ("Gravity")]
+    Rigidbody2D guyRigidbody;
+    public float fallSpeedReduction;
+    float gravity;
+    public float minGravity;
+    bool isKeyDown;
+    private void Awake() 
+    {
+        bubble = this.GetComponent<SpriteRenderer>();
+        guyRigidbody = this.transform.parent.GetComponent<Rigidbody2D>();
+        gravity = guyRigidbody.gravityScale;
+    }
     void Start()
     {
-        // Store the original size of the GameObject
         originalSize = transform.localScale;
-
-        // Ensure the target size does not exceed the max size
-        targetSize = Vector3.Min(targetSize, maxSize);
+        maxSizeVector = originalSize*maxSize;
     }
 
-    void Update()
+    public void Grow()
     {
-        // Check if the spacebar is pressed
-        if (Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
-            isResizing = true;                      // Start resizing
-            isExpanding = !isExpanding;            // Toggle between expanding and shrinking
+            isKeyDown = true;
         }
-
-        // Perform resizing
-        if (isResizing)
+        if(Input.GetKeyUp(KeyCode.Space))
         {
-            Vector3 target = isExpanding ? targetSize : originalSize; // Determine target size
-
-            // Smoothly resize the object
-            transform.localScale = Vector3.Lerp(transform.localScale, target, Time.deltaTime * resizeSpeed);
-
-            // Check if the size is close enough to the target size
-            if (Vector3.Distance(transform.localScale, target) < resizeThreshold)
+            isKeyDown = false;
+        }
+        if (isKeyDown)
+        {
+            Debug.Log("!");
+            bubble.enabled = true;
+            AdjustFallSpeed();
+            if (transform.localScale.x < (maxSizeVector.x))
             {
-                transform.localScale = target;      // Snap to the target size
-                isResizing = false;                // Stop resizing
+                transform.localScale = transform.localScale*(1+(growSpeed/10)*Time.deltaTime);
             }
         }
-
-        // Enforce the maximum size cap
-        if (transform.localScale.x > maxSize.x || transform.localScale.y > maxSize.y || transform.localScale.z > maxSize.z)
+        else bubble.enabled = false;
+    }
+    public void AdjustFallSpeed()
+    {
+        if(guyRigidbody.gravityScale > minGravity)
         {
-            transform.localScale = maxSize; // Clamp to the maximum size
-            isResizing = false;             // Stop resizing if it exceeds the cap
+            guyRigidbody.gravityScale = guyRigidbody.gravityScale*(1-(fallSpeedReduction/10)*Time.deltaTime);
         }
+    }
+    void Update()
+    {
+       Grow();
     }
 }
